@@ -1,12 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BookingRoom.Common.Entity.InterfaceDB;
+using BookingRoom.Context.Contracts.Models;
+using BookingRoom.Repositories.Anchors;
+using BookingRoom.Repositories.Contracts.WriteRepositoriesContracts;
 
 namespace BookingRoom.Repositories.WriteRepositories
 {
-    internal class ServiceWriteRepository
+    /// <summary>
+    /// Реализация <see cref="IServiceWriteRepository"/>
+    /// </summary>
+    public class ServiceWriteRepository : BaseWriteRepository<Service>, IServiceWriteRepository, IRepositoryAnchor
     {
+        public ServiceWriteRepository(IDbWriterContext writerContext)
+          : base(writerContext)
+        {
+
+        }
     }
 }
