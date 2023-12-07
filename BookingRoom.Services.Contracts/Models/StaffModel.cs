@@ -1,10 +1,17 @@
-﻿namespace BookingRoom.Context.Contracts.Models
+﻿using BookingRoom.Services.Contracts.Enums;
+
+namespace BookingRoom.Services.Contracts.Models
 {
     /// <summary>
-    /// Постоялец
+    /// Модель сотрудника
     /// </summary>
-    public class Guest : BaseAuditEntity
+    public class StaffModel
     {
+        /// <summary>
+        /// Идентификатор
+        /// </summary>
+        public Guid Id { get; set; }
+
         /// <summary>
         /// Фамилия
         /// </summary>
@@ -21,15 +28,8 @@
         public string MiddleName { get; set; } = string.Empty;
 
         /// <summary>
-        /// Паспорт
+        /// Должность
         /// </summary>
-        public string Passport { get; set; } = string.Empty;
-
-        /// <summary>
-        /// Адрес регистрации
-        /// </summary>
-        public string AddressRegistration { get; set; } = string.Empty;
-
-        public ICollection<Booking> Bookings { get; set; }
+        public PostModel Post { get; set; }
     }
 }

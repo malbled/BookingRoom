@@ -1,10 +1,15 @@
-﻿namespace BookingRoom.Context.Contracts.Models
+﻿namespace BookingRoom.Services.Contracts.Models
 {
     /// <summary>
-    /// Постоялец
+    /// Модель постояльца
     /// </summary>
-    public class Guest : BaseAuditEntity
+    public class GuestModel
     {
+        /// <summary>
+        /// Идентификатор
+        /// </summary>
+        public Guid Id { get; set; }
+
         /// <summary>
         /// Фамилия
         /// </summary>
@@ -29,7 +34,5 @@
         /// Адрес регистрации
         /// </summary>
         public string AddressRegistration { get; set; } = string.Empty;
-
-        public ICollection<Booking> Bookings { get; set; }
     }
 }
