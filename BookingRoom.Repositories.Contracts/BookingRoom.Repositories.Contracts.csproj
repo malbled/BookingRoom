@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BookingRoom.Context.Contracts\BookingRoom.Context.Contracts.csproj" />
+  </ItemGroup>
+
 </Project>
