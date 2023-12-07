@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BookingRoom.Services.Anchors
+﻿namespace BookingRoom.Services.Anchors
 {
-    internal class IServiceAnchor
+    /// <summary>
+    /// Маркерный интерфейс для регистрации сервисов
+    /// </summary>
+    public interface IServiceAnchor
     {
     }
 }
