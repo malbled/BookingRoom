@@ -1,12 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BookingRoom.Services.Contracts.Models;
+using FluentValidation;
 
 namespace BookingRoom.Services.Validator.Validators
 {
-    internal class CreateHotelRequestValidator
+    /// <summary>
+    /// Валидатор <see cref="HotelModel"/>
+    /// </summary>
+    public class CreateHotelRequestValidator : AbstractValidator<HotelModel>
     {
+        public CreateHotelRequestValidator()
+        {
+
+            RuleFor(x => x.Title)
+                .NotEmpty().WithMessage(MessageForValidation.DefaultMessage)
+                .NotNull().WithMessage(MessageForValidation.DefaultMessage)
+                .Length(3, 100).WithMessage(MessageForValidation.LengthMessage);
+
+            RuleFor(x => x.Address)
+                .NotEmpty().WithMessage(MessageForValidation.DefaultMessage)
+                .NotNull().WithMessage(MessageForValidation.DefaultMessage)
+                .Length(10, 200).WithMessage(MessageForValidation.LengthMessage);
+        }
     }
 }

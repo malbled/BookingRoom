@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BookingRoom.Services.Validator
+﻿namespace BookingRoom.Services.Validator
 {
-    internal class IServiceValidatorService
+    /// <summary>
+    /// Сервис валидации
+    /// </summary>
+    public interface IServiceValidatorService
     {
+        /// <summary>
+        /// Валидирует модель
+        /// </summary>
+        Task ValidateAsync<TModel>(TModel model, CancellationToken cancellationToken)
+            where TModel : class;
     }
 }
