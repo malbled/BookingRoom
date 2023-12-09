@@ -13,4 +13,11 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BookingRoom.Context.Contracts\BookingRoom.Context.Contracts.csproj" />
+    <ProjectReference Include="..\BookingRoom.Services.Contracts\BookingRoom.Services.Contracts.csproj" />
+    <ProjectReference Include="..\BookingRoom.Repositories.Contracts\BookingRoom.Repositories.Contracts.csproj" />
+    <ProjectReference Include="..\BookingRoom.General\BookingRoom.General.csproj" />
+  </ItemGroup>
+
 </Project>

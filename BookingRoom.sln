@@ -3,25 +3,59 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingRoom.API", "BookingRoom.API\BookingRoom.API.csproj", "{7FF5A926-325C-4BB1-8327-D17F4381046F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingRoom.API", "BookingRoom.API\BookingRoom.API.csproj", "{7FF5A926-325C-4BB1-8327-D17F4381046F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4B5F270C-1CD0-4D2F-BA88-22F38FABE368} = {4B5F270C-1CD0-4D2F-BA88-22F38FABE368}
+		{4C1D97B4-0E78-4948-B045-9C6DA8F77F27} = {4C1D97B4-0E78-4948-B045-9C6DA8F77F27}
+		{7FFF72C7-0EC6-462B-BC49-87243EEBC7C6} = {7FFF72C7-0EC6-462B-BC49-87243EEBC7C6}
+		{9E16B308-D681-4C97-B449-06050E574BAE} = {9E16B308-D681-4C97-B449-06050E574BAE}
+		{C24F473B-4442-4990-B87D-A8724CA63720} = {C24F473B-4442-4990-B87D-A8724CA63720}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingRoom.Common.Entity", "BookingRoom.Common.Entity\BookingRoom.Common.Entity.csproj", "{CC8F9C39-F1A0-4B6E-B075-17636887C585}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingRoom.Common.Entity", "BookingRoom.Common.Entity\BookingRoom.Common.Entity.csproj", "{CC8F9C39-F1A0-4B6E-B075-17636887C585}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingRoom.Context", "BookingRoom.Context\BookingRoom.Context.csproj", "{9E16B308-D681-4C97-B449-06050E574BAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingRoom.Context", "BookingRoom.Context\BookingRoom.Context.csproj", "{9E16B308-D681-4C97-B449-06050E574BAE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5161F041-B57C-4CE1-B922-7311B50842F2} = {5161F041-B57C-4CE1-B922-7311B50842F2}
+		{5FACD627-F52A-43C5-94B0-5814A21AE55E} = {5FACD627-F52A-43C5-94B0-5814A21AE55E}
+		{CC8F9C39-F1A0-4B6E-B075-17636887C585} = {CC8F9C39-F1A0-4B6E-B075-17636887C585}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingRoom.Context.Contracts", "BookingRoom.Context.Contracts\BookingRoom.Context.Contracts.csproj", "{5161F041-B57C-4CE1-B922-7311B50842F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingRoom.Context.Contracts", "BookingRoom.Context.Contracts\BookingRoom.Context.Contracts.csproj", "{5161F041-B57C-4CE1-B922-7311B50842F2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CC8F9C39-F1A0-4B6E-B075-17636887C585} = {CC8F9C39-F1A0-4B6E-B075-17636887C585}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingRoom.Context.Contracts.Configuration", "BookingRoom.Context.Contracts.Configuration\BookingRoom.Context.Contracts.Configuration.csproj", "{5FACD627-F52A-43C5-94B0-5814A21AE55E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingRoom.Context.Contracts.Configuration", "BookingRoom.Context.Contracts.Configuration\BookingRoom.Context.Contracts.Configuration.csproj", "{5FACD627-F52A-43C5-94B0-5814A21AE55E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5161F041-B57C-4CE1-B922-7311B50842F2} = {5161F041-B57C-4CE1-B922-7311B50842F2}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingRoom.General", "BookingRoom.General\BookingRoom.General.csproj", "{7FFF72C7-0EC6-462B-BC49-87243EEBC7C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingRoom.General", "BookingRoom.General\BookingRoom.General.csproj", "{7FFF72C7-0EC6-462B-BC49-87243EEBC7C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingRoom.Repositories", "BookingRoom.Repositories\BookingRoom.Repositories.csproj", "{4B5F270C-1CD0-4D2F-BA88-22F38FABE368}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingRoom.Repositories", "BookingRoom.Repositories\BookingRoom.Repositories.csproj", "{4B5F270C-1CD0-4D2F-BA88-22F38FABE368}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4C1D97B4-0E78-4948-B045-9C6DA8F77F27} = {4C1D97B4-0E78-4948-B045-9C6DA8F77F27}
+		{7FFF72C7-0EC6-462B-BC49-87243EEBC7C6} = {7FFF72C7-0EC6-462B-BC49-87243EEBC7C6}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingRoom.Repositories.Contracts", "BookingRoom.Repositories.Contracts\BookingRoom.Repositories.Contracts.csproj", "{4C1D97B4-0E78-4948-B045-9C6DA8F77F27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingRoom.Repositories.Contracts", "BookingRoom.Repositories.Contracts\BookingRoom.Repositories.Contracts.csproj", "{4C1D97B4-0E78-4948-B045-9C6DA8F77F27}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5161F041-B57C-4CE1-B922-7311B50842F2} = {5161F041-B57C-4CE1-B922-7311B50842F2}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingRoom.Services", "BookingRoom.Services\BookingRoom.Services.csproj", "{C24F473B-4442-4990-B87D-A8724CA63720}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingRoom.Services", "BookingRoom.Services\BookingRoom.Services.csproj", "{C24F473B-4442-4990-B87D-A8724CA63720}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4C1D97B4-0E78-4948-B045-9C6DA8F77F27} = {4C1D97B4-0E78-4948-B045-9C6DA8F77F27}
+		{5161F041-B57C-4CE1-B922-7311B50842F2} = {5161F041-B57C-4CE1-B922-7311B50842F2}
+		{7FFF72C7-0EC6-462B-BC49-87243EEBC7C6} = {7FFF72C7-0EC6-462B-BC49-87243EEBC7C6}
+		{A8D34213-3B21-4C15-8BD1-9FD3006B4FF0} = {A8D34213-3B21-4C15-8BD1-9FD3006B4FF0}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingRoom.Services.Contracts", "BookingRoom.Services.Contracts\BookingRoom.Services.Contracts.csproj", "{A8D34213-3B21-4C15-8BD1-9FD3006B4FF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingRoom.Services.Contracts", "BookingRoom.Services.Contracts\BookingRoom.Services.Contracts.csproj", "{A8D34213-3B21-4C15-8BD1-9FD3006B4FF0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7FFF72C7-0EC6-462B-BC49-87243EEBC7C6} = {7FFF72C7-0EC6-462B-BC49-87243EEBC7C6}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

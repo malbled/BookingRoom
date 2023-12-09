@@ -28,7 +28,7 @@
         /// <summary>
         /// Адрес регистрации
         /// </summary>
-        public string? AddressRegistration { get; set; }
+        public string AddressRegistration { get; set; } = string.Empty;
 
         public ICollection<Booking> Bookings { get; set; }
     }
