@@ -1,6 +1,12 @@
-﻿namespace BookingRoom.API.Extensions
+﻿using BookingRoom.Common.Entity;
+
+namespace BookingRoom.API.Extensions
 {
-    public class DateTimeProvider
+    /// <summary>
+    /// Реализация <see cref="IDateTimeProvider"/>
+    /// </summary>
+    public class DateTimeProvider : IDateTimeProvider
     {
+        DateTimeOffset IDateTimeProvider.UtcNow => DateTimeOffset.UtcNow;
     }
 }

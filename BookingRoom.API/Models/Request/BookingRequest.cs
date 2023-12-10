@@ -1,6 +1,15 @@
-﻿namespace BookingRoom.API.Models.Request
+﻿using BookingRoom.API.Models.CreateRequest;
+
+namespace BookingRoom.API.Models.Request
 {
-    public class BookingRequest
+    /// <summary>
+    /// Модель запроса создания билета
+    /// </summary>
+    public class BookingRequest : CreateBookingRequest
     {
+        /// <summary>
+        /// Идентификатор
+        /// </summary>
+        public Guid Id { get; set; }
     }
 }

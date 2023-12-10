@@ -1,6 +1,15 @@
-﻿namespace BookingRoom.API.Models.Request
+﻿using BookingRoom.API.Models.CreateRequest;
+
+namespace BookingRoom.API.Models.Request
 {
-    public class HotelRequest
+    /// <summary>
+    /// Модель запроса создания отеля
+    /// </summary>
+    public class HotelRequest : CreateHotelRequest
     {
+        /// <summary>
+        /// Идентификатор
+        /// </summary>
+        public Guid Id { get; set; }
     }
 }

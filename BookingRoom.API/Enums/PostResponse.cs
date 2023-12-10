@@ -1,6 +1,23 @@
 ﻿namespace BookingRoom.API.Enums
 {
-    public class PostResponse
+    /// <summary>
+    /// Должности
+    /// </summary>
+    public enum PostResponse
     {
+        /// <summary>
+        /// Менеджер
+        /// </summary>
+        Manager,
+
+        /// <summary>
+        /// Администратор
+        /// </summary>
+        Administrator,
+
+        /// <summary>
+        /// Нет поста
+        /// </summary>
+        None
     }
 }

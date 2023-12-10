@@ -15,6 +15,16 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BookingRoom.Common.Entity\BookingRoom.Common.Entity.csproj" />
+    <ProjectReference Include="..\BookingRoom.Context\BookingRoom.Context.csproj" />
+    <ProjectReference Include="..\BookingRoom.General\BookingRoom.General.csproj" />
+    <ProjectReference Include="..\BookingRoom.Repositories.Contracts\BookingRoom.Repositories.Contracts.csproj" />
+    <ProjectReference Include="..\BookingRoom.Repositories\BookingRoom.Repositories.csproj" />
+    <ProjectReference Include="..\BookingRoom.Services\BookingRoom.Services.csproj" />
   </ItemGroup>
 
 </Project>
