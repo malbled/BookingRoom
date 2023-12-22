@@ -14,9 +14,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingRoom.API", "BookingR
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingRoom.Common.Entity", "BookingRoom.Common.Entity\BookingRoom.Common.Entity.csproj", "{CC8F9C39-F1A0-4B6E-B075-17636887C585}"
-	ProjectSection(ProjectDependencies) = postProject
-		{A3B974CE-DE1E-4BF4-83FC-8A267474BB7D} = {A3B974CE-DE1E-4BF4-83FC-8A267474BB7D}
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingRoom.Context", "BookingRoom.Context\BookingRoom.Context.csproj", "{9E16B308-D681-4C97-B449-06050E574BAE}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -61,19 +58,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingRoom.Services.Contra
 		{7FFF72C7-0EC6-462B-BC49-87243EEBC7C6} = {7FFF72C7-0EC6-462B-BC49-87243EEBC7C6}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingRoom.API.Tests", "BookingRoom.API.Tests\BookingRoom.API.Tests.csproj", "{C783F24A-CE03-40C3-B77B-F8712E8C4B26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingRoom.API.Tests", "BookingRoom.API.Tests\BookingRoom.API.Tests.csproj", "{C783F24A-CE03-40C3-B77B-F8712E8C4B26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingRoom.Repositories.Tests", "BookingRoom.Repositories.Tests\BookingRoom.Repositories.Tests.csproj", "{EAAB5353-610D-4127-8686-028D1C47E25C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingRoom.Repositories.Tests", "BookingRoom.Repositories.Tests\BookingRoom.Repositories.Tests.csproj", "{EAAB5353-610D-4127-8686-028D1C47E25C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingRoom.Services.Tests", "BookingRoom.Services.Tests\BookingRoom.Services.Tests.csproj", "{8045FF62-ED98-4FBB-A7A0-67D74E13B5D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingRoom.Services.Tests", "BookingRoom.Services.Tests\BookingRoom.Services.Tests.csproj", "{8045FF62-ED98-4FBB-A7A0-67D74E13B5D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingRoom.Common", "BookingRoom.Common\BookingRoom.Common.csproj", "{A3B974CE-DE1E-4BF4-83FC-8A267474BB7D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingRoom.Context.Tests", "BookingRoom.Context.Tests\BookingRoom.Context.Tests.csproj", "{1AC8E397-8A6A-49D3-BEF7-8BFF30A688D0}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingRoom.Logging", "BookingRoom.Logging\BookingRoom.Logging.csproj", "{11E70E1F-DA64-4F25-9D51-EDEA25CEF62B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingRoom.Shared", "BookingRoom.Shared\BookingRoom.Shared.csproj", "{C3B17AA4-A0DD-467A-8AA0-017119EE89B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingRoom.Context.Tests", "BookingRoom.Context.Tests\BookingRoom.Context.Tests.csproj", "{1AC8E397-8A6A-49D3-BEF7-8BFF30A688D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -133,22 +124,10 @@ Global
 		{8045FF62-ED98-4FBB-A7A0-67D74E13B5D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8045FF62-ED98-4FBB-A7A0-67D74E13B5D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8045FF62-ED98-4FBB-A7A0-67D74E13B5D5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A3B974CE-DE1E-4BF4-83FC-8A267474BB7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A3B974CE-DE1E-4BF4-83FC-8A267474BB7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A3B974CE-DE1E-4BF4-83FC-8A267474BB7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A3B974CE-DE1E-4BF4-83FC-8A267474BB7D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1AC8E397-8A6A-49D3-BEF7-8BFF30A688D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1AC8E397-8A6A-49D3-BEF7-8BFF30A688D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AC8E397-8A6A-49D3-BEF7-8BFF30A688D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AC8E397-8A6A-49D3-BEF7-8BFF30A688D0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{11E70E1F-DA64-4F25-9D51-EDEA25CEF62B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{11E70E1F-DA64-4F25-9D51-EDEA25CEF62B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{11E70E1F-DA64-4F25-9D51-EDEA25CEF62B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{11E70E1F-DA64-4F25-9D51-EDEA25CEF62B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C3B17AA4-A0DD-467A-8AA0-017119EE89B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C3B17AA4-A0DD-467A-8AA0-017119EE89B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C3B17AA4-A0DD-467A-8AA0-017119EE89B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C3B17AA4-A0DD-467A-8AA0-017119EE89B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

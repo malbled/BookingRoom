@@ -24,7 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BookingRoom.Common.Entity\BookingRoom.Common.Entity.csproj" />
     <ProjectReference Include="..\BookingRoom.Context\BookingRoom.Context.csproj" />
     <ProjectReference Include="..\BookingRoom.General\BookingRoom.General.csproj" />
     <ProjectReference Include="..\BookingRoom.Repositories.Contracts\BookingRoom.Repositories.Contracts.csproj" />

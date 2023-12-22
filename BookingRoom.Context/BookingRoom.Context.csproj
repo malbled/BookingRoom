@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BookingRoom.Common.Entity\BookingRoom.Common.Entity.csproj" />
     <ProjectReference Include="..\BookingRoom.Context.Contracts.Configuration\BookingRoom.Context.Contracts.Configuration.csproj" />
     <ProjectReference Include="..\BookingRoom.Context.Contracts\BookingRoom.Context.Contracts.csproj" />
   </ItemGroup>

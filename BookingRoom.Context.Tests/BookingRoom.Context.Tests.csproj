@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BookingRoom.Common.Entity\BookingRoom.Common.Entity.csproj" />
+    <ProjectReference Include="..\BookingRoom.Context\BookingRoom.Context.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -6,4 +6,11 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BookingRoom.Context.Contracts\BookingRoom.Context.Contracts.csproj" />
+    <ProjectReference Include="..\BookingRoom.Context.Tests\BookingRoom.Context.Tests.csproj" />
+    <ProjectReference Include="..\BookingRoom.Repositories.Contracts\BookingRoom.Repositories.Contracts.csproj" />
+    <ProjectReference Include="..\BookingRoom.Repositories\BookingRoom.Repositories.csproj" />
+  </ItemGroup>
+
 </Project>
