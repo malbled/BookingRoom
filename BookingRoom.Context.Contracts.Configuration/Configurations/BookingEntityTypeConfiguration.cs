@@ -17,7 +17,7 @@ namespace BookingRoom.Context.Contracts.Configuration.Configurations
             builder.PropertyAuditConfiguration();
             builder.Property(x => x.DateCheckIn).IsRequired();
             builder.Property(x => x.DateCheckout).IsRequired();
-            builder.Property(x => x.Price).IsRequired();
+            builder.Property(x => x.Price).HasPrecision(8, 2).IsRequired();
             builder.Property(x => x.RoomId).IsRequired();
             builder.Property(x => x.HotelId).IsRequired();
             builder.Property(x => x.GuestId).IsRequired();
