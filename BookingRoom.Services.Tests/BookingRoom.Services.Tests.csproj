@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BookingRoom.Context.Tests\BookingRoom.Context.Tests.csproj" />
+    <ProjectReference Include="..\BookingRoom.Repositories\BookingRoom.Repositories.csproj" />
+    <ProjectReference Include="..\BookingRoom.Services\BookingRoom.Services.csproj" />
+  </ItemGroup>
+
+</Project>
