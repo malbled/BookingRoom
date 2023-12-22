@@ -1,12 +1,12 @@
 ﻿namespace BookingRoom.Common.Entity.EntityInterface
 {
     /// <summary>
-    /// Аудит удаление сущности
+    /// Аудит удаления сущности
     /// </summary>
     public interface IEntityAuditDeleted
     {
         /// <summary>
-        /// Дата удаление
+        /// Дата удаления
         /// </summary>
         public DateTimeOffset? DeletedAt { get; set; }
     }

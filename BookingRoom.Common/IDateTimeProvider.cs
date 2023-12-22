@@ -1,4 +1,4 @@
-﻿namespace BookingRoom.Common.Entity
+﻿namespace BookingRoom.Common
 {
     /// <summary>
     /// Интерфейс получения даты

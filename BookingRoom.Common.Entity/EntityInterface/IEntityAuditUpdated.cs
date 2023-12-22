@@ -1,7 +1,7 @@
 ﻿namespace BookingRoom.Common.Entity.EntityInterface
 {
     /// <summary>
-    /// Аудит обновления сущности
+    /// Аудит изменения сущности
     /// </summary>
     public interface IEntityAuditUpdated
     {

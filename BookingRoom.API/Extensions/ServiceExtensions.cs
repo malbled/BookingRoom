@@ -63,8 +63,7 @@ namespace BookingRoom.API.Extensions
                 c.SwaggerDoc("Staff", new OpenApiInfo { Title = "Сотрудники", Version = "v1" });
                 c.SwaggerDoc("Booking", new OpenApiInfo { Title = "Брони", Version = "v1" });
 
-                var filePath = Path.Combine(AppContext.BaseDirectory, "BookingRoom.API.xml");
-                c.IncludeXmlComments(filePath);
+                
             });
         }
 
