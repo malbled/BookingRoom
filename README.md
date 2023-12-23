@@ -11,7 +11,8 @@
 
 ![image](https://github.com/malbled/BookingRoom/assets/107112651/668a6d3e-f315-4a9f-827b-75f5248ce63e)
 
-## Схема моделей
+Схема моделей
+---
 
 ```mermaid
     classDiagram
@@ -65,10 +66,11 @@
         Administrator(Администатор)
         None(Неизвестно)
     }
+```
 
-
-## SQL
-
+SQL
+---
+```
 INSERT INTO [dbo].[Guests]
            ([Id]
            ,[LastName]
@@ -355,3 +357,4 @@ INSERT INTO [dbo].[Bookings]
            ,GETDATE()
            ,'insert'
            ,null)
+           ```
