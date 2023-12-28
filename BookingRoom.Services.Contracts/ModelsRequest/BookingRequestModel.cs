@@ -9,21 +9,10 @@
         /// Идентификатор
         /// </summary>
         public Guid Id { get; set; }
-
-        /// <summary>
-        /// Идентификатор номера
-        /// </summary>
-        public Guid RoomId { get; set; }
-
         /// <summary>
         /// Идентификатор отеля
         /// </summary>
         public Guid HotelId { get; set; }
-
-        /// <summary>
-        /// Идентификатор услуги
-        /// </summary>
-        public Guid ServiceId { get; set; }
 
         /// <summary>
         /// Идентификатор постояльца
@@ -31,9 +20,19 @@
         public Guid GuestId { get; set; }
 
         /// <summary>
+        /// Идентификатор номера
+        /// </summary>
+        public Guid RoomId { get; set; }
+
+        /// <summary>
         /// Идентификатор сотрудника, создавшего бронь 
         /// </summary>
         public Guid? StaffId { get; set; }
+
+        /// <summary>
+        /// Идентификатор услуги
+        /// </summary>
+        public Guid ServiceId { get; set; }
 
         /// <summary>
         /// Дата и время заезда

@@ -15,11 +15,12 @@ namespace BookingRoom.Context.Contracts.Configuration.Configurations
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).IsRequired();
             builder.PropertyAuditConfiguration();
-            builder.Property(x => x.FirstName).HasMaxLength(50).IsRequired();
             builder.Property(x => x.LastName).HasMaxLength(50).IsRequired();
+            builder.Property(x => x.FirstName).HasMaxLength(50).IsRequired();
             builder.Property(x => x.MiddleName).HasMaxLength(50).IsRequired();
-            builder.Property(x => x.AddressRegistration).HasMaxLength(200).IsRequired();
             builder.Property(x => x.Passport).HasMaxLength(20).IsRequired();
+            builder.Property(x => x.AddressRegistration).HasMaxLength(200).IsRequired();
+            
             builder.HasIndex(x => x.Passport)
                 .IsUnique()
                 .HasDatabaseName($"{nameof(Guest)}_{nameof(Guest.Passport)}")

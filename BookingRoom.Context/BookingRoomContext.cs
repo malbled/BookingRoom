@@ -24,11 +24,11 @@ namespace BookingRoom.Context
 
         public DbSet<Guest> Guests { get; }
 
-        public DbSet<Service> Services { get; }
-
         public DbSet<Room> Rooms { get; }
 
         public DbSet<Staff> Staffs { get; }
+
+        public DbSet<Service> Services { get; }
 
         public DbSet<Booking> Bookings { get; }
 

@@ -28,12 +28,13 @@ namespace BookingRoom.Services.Tests.TestsValidators
         public async void ValidatorShouldError()
         {
             //Arrange
-            var model = TestDataGenerator.BookingRequestModel(x => { x.DateCheckIn = DateTimeOffset.Now; x.DateCheckout = DateTimeOffset.Now; x.Price = 0; });
-            model.GuestId = Guid.NewGuid();
+            var model = TestDataGenerator.BookingRequestModel(x => { x.DateCheckIn = DateTimeOffset.Now; x.DateCheckout = DateTimeOffset.Now; x.Price = 100; });
+            
             model.HotelId = Guid.NewGuid();
-            model.ServiceId = Guid.NewGuid();
+            model.GuestId = Guid.NewGuid();
             model.RoomId = Guid.NewGuid();
             model.StaffId = Guid.Empty;
+            model.ServiceId = Guid.NewGuid();
 
             // Act
             var result = await validator.TestValidateAsync(model);
@@ -46,26 +47,27 @@ namespace BookingRoom.Services.Tests.TestsValidators
         /// Тест на отсутствие ошибок
         /// </summary>
         [Fact]
-        async public void ValidatorShouldSuccess()
+        public async void ValidatorShouldSuccess()
         {
             //Arrange
             var hotel = TestDataGenerator.Hotel();
-            var service = TestDataGenerator.Service();
-            var room = TestDataGenerator.Room();
             var guest = TestDataGenerator.Guest();
+            var room = TestDataGenerator.Room();
+            var service = TestDataGenerator.Service();           
 
             await Context.Hotels.AddAsync(hotel);
-            await Context.Services.AddAsync(service);
-            await Context.Rooms.AddAsync(room);
             await Context.Guests.AddAsync(guest);
+            await Context.Rooms.AddAsync(room);
+            await Context.Services.AddAsync(service);
             await UnitOfWork.SaveChangesAsync(CancellationToken);
 
             var model = TestDataGenerator.BookingRequestModel();
-            model.GuestId = guest.Id;
-            model.ServiceId = service.Id;
-            model.RoomId = room.Id;
             model.HotelId = hotel.Id;
+            model.GuestId = guest.Id;
+            model.RoomId = room.Id;
             model.StaffId = Guid.Empty;
+            model.ServiceId = service.Id;           
+           
 
             // Act
             var result = await validator.TestValidateAsync(model);

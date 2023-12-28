@@ -28,8 +28,9 @@ namespace BookingRoom.Services.Tests.TestsServices
             });
 
             bookingService = new BookingService(new BookingWriteRepository(WriterContext), new BookingReadRepository(Reader),
-                new HotelReadRepository(Reader), new GuestReadRepository(Reader), new ServiceReadRepository(Reader),
-                new RoomReadRepository(Reader), new StaffReadRepository(Reader), config.CreateMapper(), UnitOfWork,
+                new HotelReadRepository(Reader), new GuestReadRepository(Reader), new RoomReadRepository(Reader),
+                new ServiceReadRepository(Reader),
+                 new StaffReadRepository(Reader), config.CreateMapper(), UnitOfWork,
                 new ServicesValidatorService(new HotelReadRepository(Reader),
                 new GuestReadRepository(Reader), new ServiceReadRepository(Reader), new RoomReadRepository(Reader)));
         }

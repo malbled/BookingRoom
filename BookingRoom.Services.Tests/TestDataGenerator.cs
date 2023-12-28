@@ -37,7 +37,7 @@ namespace BookingRoom.Services.Tests
             var result = new Room
             {
 
-                Title = $"{Guid.NewGuid():N}",
+                Title = $"55555",
                 TypeRoom = $"{Guid.NewGuid():N}",
                 Description = $"{Guid.NewGuid():N}"
             };
@@ -54,7 +54,7 @@ namespace BookingRoom.Services.Tests
                 LastName = $"{Guid.NewGuid():N}",
                 FirstName = $"{Guid.NewGuid():N}",
                 MiddleName = $"{Guid.NewGuid():N}",
-                Passport = $"{Guid.NewGuid():N}",
+                Passport = $"55555",
                 AddressRegistration = $"{Guid.NewGuid():N}"
             };
             result.BaseAuditSetParamtrs();
@@ -70,7 +70,7 @@ namespace BookingRoom.Services.Tests
                 LastName = $"{Guid.NewGuid():N}",
                 FirstName = $"{Guid.NewGuid():N}",
                 MiddleName = $"{Guid.NewGuid():N}",
-                Post = Context.Contracts.Enums.Post.Administrator
+                Post = Context.Contracts.Enums.Post.None
             };
             result.BaseAuditSetParamtrs();
             settings?.Invoke(result);
@@ -121,7 +121,7 @@ namespace BookingRoom.Services.Tests
             var result = new RoomModel
             {
                 Id = Guid.NewGuid(),
-                Title = $"{Guid.NewGuid():N}",
+                Title = $"55555",
                 
                 TypeRoom = $"{Guid.NewGuid():N}",
                 Description = $"{Guid.NewGuid():N}"
@@ -140,7 +140,7 @@ namespace BookingRoom.Services.Tests
                 LastName = $"{Guid.NewGuid():N}",
                 FirstName = $"{Guid.NewGuid():N}",
                 MiddleName = $"{Guid.NewGuid():N}",
-                Passport = $"{Guid.NewGuid():N}",
+                Passport = $"55555",
                 AddressRegistration = $"{Guid.NewGuid():N}",
             };
 

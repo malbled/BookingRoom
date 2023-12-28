@@ -34,7 +34,7 @@ namespace BookingRoom.Repositories.Tests
         {
             var result = new Room
             {
-                Title = $"{Guid.NewGuid():N}",
+                Title = $"5555",
                 TypeRoom = $"{Guid.NewGuid():N}",
                 Description = $"{Guid.NewGuid():N}"
             };
@@ -51,7 +51,7 @@ namespace BookingRoom.Repositories.Tests
                 LastName = $"{Guid.NewGuid():N}",
                 FirstName = $"{Guid.NewGuid():N}",
                 MiddleName = $"{Guid.NewGuid():N}",
-                Passport = $"{Guid.NewGuid():N}",
+                Passport = $"5555",
                 AddressRegistration = $"{Guid.NewGuid():N}"
             };
             result.BaseAuditSetParamtrs();

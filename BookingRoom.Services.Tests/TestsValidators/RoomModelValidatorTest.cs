@@ -25,7 +25,7 @@ namespace BookingRoom.Services.Tests.TestsValidators
         public void ValidatorShouldError()
         {
             //Arrange
-            var model = TestDataGenerator.RoomModel(x => { x.Title = "777"; x.Description = "777"; x.TypeRoom = "777"; });
+            var model = TestDataGenerator.RoomModel(x => { x.Title = "777";  x.TypeRoom = "7"; x.Description = "777"; });
 
             // Act
             var result = validator.TestValidate(model);
