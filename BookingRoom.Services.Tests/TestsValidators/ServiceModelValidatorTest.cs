@@ -1,12 +1,48 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BookingRoom.Services.Validator.Validators;
+using FluentValidation.TestHelper;
+using Xunit;
 
 namespace BookingRoom.Services.Tests.TestsValidators
 {
-    internal class ServiceModelValidatorTest
+    public class ServiceModelValidatorTest
     {
+        private readonly CreateServiceRequestValidator validator;
+
+        public ServiceModelValidatorTest()
+        {
+            validator = new CreateServiceRequestValidator();
+        }
+
+        /// <summary>
+        /// Тест на наличие ошибок
+        /// </summary>
+        [Fact]
+        public void ValidatorShouldError()
+        {
+            //Arrange
+            var model = TestDataGenerator.ServiceModel(x => { x.Title = "777"; x.Description = "777";});
+
+            // Act
+            var result = validator.TestValidate(model);
+
+            // Assert
+            result.ShouldHaveAnyValidationError();
+        }
+
+        /// <summary>
+        /// Тест на отсутствие ошибок
+        /// </summary>
+        [Fact]
+        public void ValidatorShouldSuccess()
+        {
+            //Arrange
+            var model = TestDataGenerator.ServiceModel();
+
+            // Act
+            var result = validator.TestValidate(model);
+
+            // Assert
+            result.ShouldNotHaveAnyValidationErrors();
+        }
     }
 }
