@@ -1,4 +1,5 @@
-﻿using BookingRoom.Context.Tests;
+﻿using BookingRoom.Context.Contracts.Enums;
+using BookingRoom.Context.Tests;
 using BookingRoom.Repositories.ReadRepositories;
 using BookingRoom.Services.Validator.Validators;
 using FluentValidation.TestHelper;
@@ -53,7 +54,7 @@ namespace BookingRoom.Services.Tests.TestsValidators
             var hotel = TestDataGenerator.Hotel();
             var guest = TestDataGenerator.Guest();
             var room = TestDataGenerator.Room();
-            var service = TestDataGenerator.Service();           
+            var service = TestDataGenerator.Service();
 
             await Context.Hotels.AddAsync(hotel);
             await Context.Guests.AddAsync(guest);
@@ -65,9 +66,11 @@ namespace BookingRoom.Services.Tests.TestsValidators
             model.HotelId = hotel.Id;
             model.GuestId = guest.Id;
             model.RoomId = room.Id;
-            model.StaffId = Guid.Empty;
-            model.ServiceId = service.Id;           
-           
+            model.ServiceId = service.Id; 
+            model.DateCheckIn = DateTime.Now;
+            model.DateCheckout = DateTime.Now;
+            model.Price = 101;
+
 
             // Act
             var result = await validator.TestValidateAsync(model);

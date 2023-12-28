@@ -184,16 +184,19 @@ namespace BookingRoom.Services.Tests.TestsServices
             var guest = TestDataGenerator.Guest();
 
             await Context.Hotels.AddAsync(hotel);
-            await Context.Services.AddAsync(service);
-            await Context.Rooms.AddAsync(room);
             await Context.Guests.AddAsync(guest);
+            await Context.Rooms.AddAsync(room);
+            await Context.Services.AddAsync(service);
+            
+            
             await UnitOfWork.SaveChangesAsync(CancellationToken);
 
             var model = TestDataGenerator.BookingRequestModel();
-            model.GuestId = guest.Id;
-            model.ServiceId = service.Id;
-            model.RoomId = room.Id;
             model.HotelId = hotel.Id;
+            model.GuestId = guest.Id;
+            model.RoomId = room.Id;
+            model.ServiceId = service.Id;
+            
 
             //Act
             Func<Task> act = () => bookingService.AddAsync(model, CancellationToken);
@@ -234,16 +237,20 @@ namespace BookingRoom.Services.Tests.TestsServices
             var guest = TestDataGenerator.Guest();
 
             await Context.Hotels.AddAsync(hotel);
-            await Context.Services.AddAsync(service);
-            await Context.Rooms.AddAsync(room);
             await Context.Guests.AddAsync(guest);
+            await Context.Rooms.AddAsync(room);
+            await Context.Services.AddAsync(service);
+            
+            
             await UnitOfWork.SaveChangesAsync(CancellationToken);
 
             var model = TestDataGenerator.BookingRequestModel();
-            model.GuestId = guest.Id;
-            model.ServiceId = service.Id;
-            model.RoomId = room.Id;
             model.HotelId = hotel.Id;
+            model.GuestId = guest.Id;
+            model.RoomId = room.Id;
+            model.ServiceId = service.Id;
+           
+           
 
             //Act
             Func<Task> act = () => bookingService.EditAsync(model, CancellationToken);
@@ -282,24 +289,23 @@ namespace BookingRoom.Services.Tests.TestsServices
             var guest = TestDataGenerator.Guest();
 
             await Context.Hotels.AddAsync(hotel);
-            await Context.Services.AddAsync(service);
-            await Context.Rooms.AddAsync(room);
             await Context.Guests.AddAsync(guest);
+            await Context.Rooms.AddAsync(room);
+            await Context.Services.AddAsync(service);
+                     
             await UnitOfWork.SaveChangesAsync(CancellationToken);
 
             var booking = TestDataGenerator.Booking();
-            booking.GuestId = guest.Id;
-            booking.ServiceId = service.Id;
-            booking.RoomId = room.Id;
             booking.HotelId = hotel.Id;
+            booking.GuestId = guest.Id;
+            booking.RoomId = room.Id;
+            booking.ServiceId = service.Id;
 
             var model = TestDataGenerator.BookingRequestModel();
-            model.GuestId = guest.Id;
-            model.ServiceId = service.Id;
-            model.RoomId = room.Id;
             model.HotelId = hotel.Id;
-
-
+            model.GuestId = guest.Id;
+            model.RoomId = room.Id;
+            model.ServiceId = service.Id;
 
             await Context.Bookings.AddAsync(booking);
             await UnitOfWork.SaveChangesAsync(CancellationToken);

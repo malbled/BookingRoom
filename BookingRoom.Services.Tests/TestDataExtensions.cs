@@ -2,7 +2,7 @@
 
 namespace BookingRoom.Services.Tests
 {
-    internal static class TestDataExtensions
+    public static class TestDataExtensions
     {
         public static void BaseAuditSetParamtrs<TEntity>(this TEntity entity) where TEntity : BaseAuditEntity
         {

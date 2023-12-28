@@ -185,7 +185,7 @@ namespace BookingRoom.Services.Tests.TestsServices
         public async Task AddShouldWork()
         {
             //Arrange
-            var model = TestDataGenerator.RoomModel();
+            var model =  TestDataGenerator.RoomModel();
 
             //Act
             Func<Task> act = () => roomService.AddAsync(model, CancellationToken);
@@ -270,8 +270,9 @@ namespace BookingRoom.Services.Tests.TestsServices
                 {
                     model.Id,
                     model.Title,
-                    model.Description,
-                    model.TypeRoom
+                    model.TypeRoom,
+                    model.Description
+                    
                 });
         }
     }
