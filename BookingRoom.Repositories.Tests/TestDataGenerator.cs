@@ -2,9 +2,9 @@
 
 namespace BookingRoom.Repositories.Tests
 {
-    internal static class TestDataGenerator
+    public static class TestDataGenerator
     {
-        static internal Hotel Hotel(Action<Hotel>? settings = null)
+        static public Hotel Hotel(Action<Hotel>? settings = null)
         {
             var result = new Hotel
             {
@@ -17,7 +17,7 @@ namespace BookingRoom.Repositories.Tests
             return result;
         }
 
-        static internal Service Service(Action<Service>? settings = null)
+        static public Service Service(Action<Service>? settings = null)
         {
             var result = new Service
             {
@@ -30,13 +30,13 @@ namespace BookingRoom.Repositories.Tests
             return result;
         }
 
-        static internal Room Room(Action<Room>? settings = null)
+        static public Room Room(Action<Room>? settings = null)
         {
             var result = new Room
             {
                 Title = $"{Guid.NewGuid():N}",
-                Description = $"{Guid.NewGuid():N}",
-                TypeRoom = $"{Guid.NewGuid():N}"
+                TypeRoom = $"{Guid.NewGuid():N}",
+                Description = $"{Guid.NewGuid():N}"
             };
             result.BaseAuditSetParamtrs();
 
@@ -44,12 +44,12 @@ namespace BookingRoom.Repositories.Tests
             return result;
         }
 
-        static internal Guest Guest(Action<Guest>? settings = null)
+        static public Guest Guest(Action<Guest>? settings = null)
         {
             var result = new Guest
             {
-                FirstName = $"{Guid.NewGuid():N}",
                 LastName = $"{Guid.NewGuid():N}",
+                FirstName = $"{Guid.NewGuid():N}",
                 MiddleName = $"{Guid.NewGuid():N}",
                 Passport = $"{Guid.NewGuid():N}",
                 AddressRegistration = $"{Guid.NewGuid():N}"
@@ -60,12 +60,12 @@ namespace BookingRoom.Repositories.Tests
             return result;
         }
 
-        static internal Staff Staff(Action<Staff>? settings = null)
+        static public Staff Staff(Action<Staff>? settings = null)
         {
             var result = new Staff
             {
-                FirstName = $"{Guid.NewGuid():N}",
                 LastName = $"{Guid.NewGuid():N}",
+                FirstName = $"{Guid.NewGuid():N}",
                 MiddleName = $"{Guid.NewGuid():N}",
                 Post = Context.Contracts.Enums.Post.Administrator
             };
@@ -74,7 +74,7 @@ namespace BookingRoom.Repositories.Tests
             return result;
         }
 
-        static internal Booking Booking(Action<Booking>? settings = null)
+        static public Booking Booking(Action<Booking>? settings = null)
         {
             var result = new Booking
             {

@@ -74,8 +74,8 @@ namespace BookingRoom.Services.Tests.TestsServices
                 .And.BeEquivalentTo(new
                 {
                     target.Id,
-                    target.FirstName,
                     target.LastName,
+                    target.FirstName,
                     target.MiddleName
                 });
         }
@@ -266,8 +266,8 @@ namespace BookingRoom.Services.Tests.TestsServices
                 .BeEquivalentTo(new
                 {
                     model.Id,
-                    model.FirstName,
                     model.LastName,
+                    model.FirstName,
                     model.MiddleName
                 });
         }

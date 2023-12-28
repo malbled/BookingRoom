@@ -44,7 +44,7 @@ namespace BookingRoom.API.AutoMappers
                 .ForMember(x => x.Hotel, opt => opt.Ignore())
                 .ForMember(x => x.Guest, opt => opt.Ignore())
                 .ForMember(x => x.Service, opt => opt.Ignore())
-            .ForMember(x => x.Staff, opt => opt.Ignore());
+                .ForMember(x => x.Staff, opt => opt.Ignore());
 
             CreateMap<BookingRequest, BookingRequestModel>(MemberList.Destination);
             CreateMap<CreateBookingRequest, BookingRequestModel>(MemberList.Destination)
