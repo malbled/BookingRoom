@@ -8,6 +8,7 @@ using BookingRoom.Services.Contracts.Exceptions;
 using BookingRoom.Services.Contracts.ServicesContracts;
 using BookingRoom.Services.Services;
 using BookingRoom.Services.Validator;
+using BookingRoom.Test.Extensions;
 using FluentAssertions;
 using Xunit;
 
@@ -36,7 +37,8 @@ namespace BookingRoom.Services.Tests.TestsServices
                 new HotelWriteRepository(WriterContext), 
                 UnitOfWork,
 
-                new ServicesValidatorService(hotelRead, 
+                new ServicesValidatorService(
+                    hotelRead, 
                 new GuestReadRepository(Reader), 
                 new ServiceReadRepository(Reader),
                 new RoomReadRepository(Reader)));
@@ -158,6 +160,27 @@ namespace BookingRoom.Services.Tests.TestsServices
                 .WithMessage($"*{model.Id}*");
         }
 
+        
+
+        /// <summary>
+        /// Добавление <see cref="Hotel"/>
+        /// </summary>
+        [Fact]
+        public async Task AddShouldWork()
+        {
+            //Arrange
+            var model = TestDataGenerator.HotelModel();
+
+            //Act
+            Func<Task> act = () => hotelService.AddAsync(model, CancellationToken);
+
+            // Assert
+            await act.Should().NotThrowAsync();
+            var entity = Context.Hotels.Single(x => x.Id == model.Id);
+            entity.Should().NotBeNull();
+            entity.DeletedAt.Should().BeNull();
+        }
+
         /// <summary>
         /// Удаление <see cref="Hotel"/>
         /// </summary>
@@ -177,25 +200,6 @@ namespace BookingRoom.Services.Tests.TestsServices
             var entity = Context.Hotels.Single(x => x.Id == model.Id);
             entity.Should().NotBeNull();
             entity.DeletedAt.Should().NotBeNull();
-        }
-
-        /// <summary>
-        /// Добавление <see cref="Hotel"/>
-        /// </summary>
-        [Fact]
-        public async Task AddShouldWork()
-        {
-            //Arrange
-            var model = TestDataGenerator.HotelModel();
-
-            //Act
-            Func<Task> act = () => hotelService.AddAsync(model, CancellationToken);
-
-            // Assert
-            await act.Should().NotThrowAsync();
-            var entity = Context.Hotels.Single(x => x.Id == model.Id);
-            entity.Should().NotBeNull();
-            entity.DeletedAt.Should().BeNull();
         }
 
         /// <summary>
@@ -270,8 +274,9 @@ namespace BookingRoom.Services.Tests.TestsServices
                 .BeEquivalentTo(new
                 {
                     model.Id,
-                    model.Address,
-                    model.Title
+                    model.Title,
+                    model.Address
+                    
                 });
         }
     }

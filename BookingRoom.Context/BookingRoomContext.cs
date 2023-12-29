@@ -20,17 +20,17 @@ namespace BookingRoom.Context
     /// </remarks>
     public class BookingRoomContext : DbContext, IBookingRoomContext, IDbRead, IDbWriter, IUnitOfWork
     {
-        public DbSet<Hotel> Hotels { get; }
+        public DbSet<Hotel> Hotels { get; set; }
 
-        public DbSet<Guest> Guests { get; }
+        public DbSet<Guest> Guests { get; set;  }
 
-        public DbSet<Room> Rooms { get; }
+        public DbSet<Room> Rooms { get; set;  }
 
-        public DbSet<Staff> Staffs { get; }
+        public DbSet<Staff> Staffs { get; set;  }
 
-        public DbSet<Service> Services { get; }
+        public DbSet<Service> Services { get; set; }
 
-        public DbSet<Booking> Bookings { get; }
+        public DbSet<Booking> Bookings { get; set; }
 
         public BookingRoomContext(DbContextOptions<BookingRoomContext> options) : base(options)
         {

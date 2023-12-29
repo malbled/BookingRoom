@@ -13,7 +13,7 @@ namespace BookingRoom.Services.Validator.Validators
             RuleFor(x => x.Title)
                .NotEmpty().WithMessage(MessageForValidation.DefaultMessage)
                .NotNull().WithMessage(MessageForValidation.DefaultMessage)
-               .Length(2, 20).WithMessage(MessageForValidation.LengthMessage);
+               .Length(2, 50).WithMessage(MessageForValidation.LengthMessage);
 
             RuleFor(x => x.TypeRoom)
                .NotEmpty().WithMessage(MessageForValidation.DefaultMessage)

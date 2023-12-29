@@ -1,5 +1,6 @@
 ﻿using BookingRoom.Services.Contracts.Enums;
 using BookingRoom.Services.Validator.Validators;
+using BookingRoom.Test.Extensions;
 using FluentValidation.TestHelper;
 using System;
 using System.Collections.Generic;

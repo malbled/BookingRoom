@@ -1,8 +1,9 @@
 ﻿using BookingRoom.Context.Contracts.Models;
+using BookingRoom.Services.Contracts.Enums;
 using BookingRoom.Services.Contracts.Models;
 using BookingRoom.Services.Contracts.ModelsRequest;
 
-namespace BookingRoom.Services.Tests
+namespace BookingRoom.Test.Extensions
 {
     public static class TestDataGenerator
     {
@@ -10,8 +11,8 @@ namespace BookingRoom.Services.Tests
         {
             var result = new Hotel
             {
-                Title = $"Аврора",
-                Address = $"Приморское 261"
+                Title = $"{Guid.NewGuid():N}",
+                Address = $"{Guid.NewGuid():N}"
             };
             result.BaseAuditSetParamtrs();
 
@@ -23,11 +24,11 @@ namespace BookingRoom.Services.Tests
         {
             var result = new Guest
             {
-                LastName = $"Малышка",
-                FirstName = $"Саня",
-                MiddleName = $"Юрьевна",
-                Passport = $"12345",
-                AddressRegistration = $"Приморское 261"
+                LastName = $"{Guid.NewGuid():N}",
+                FirstName = $"{Guid.NewGuid():N}",
+                MiddleName = $"{Guid.NewGuid():N}",
+                Passport = $"{string.Join("", Guid.NewGuid().ToString().Take(19))}",
+                AddressRegistration = $"{Guid.NewGuid():N}"
             };
             result.BaseAuditSetParamtrs();
 
@@ -39,9 +40,9 @@ namespace BookingRoom.Services.Tests
         {
             var result = new Room
             {
-                Title = $"1023",
-                TypeRoom = $"люкс",
-                Description = $"есть холодильник"
+                Title = $"{Guid.NewGuid():N}",
+                TypeRoom = $"{Guid.NewGuid():N}",
+                Description = $"{Guid.NewGuid():N}"
             };
             result.BaseAuditSetParamtrs();
 
@@ -53,9 +54,9 @@ namespace BookingRoom.Services.Tests
         {
             var result = new Staff
             {
-                LastName = $"не малышка",
-                FirstName = $"не саня",
-                MiddleName = $"не юрьевна",
+                LastName = $"{Guid.NewGuid():N}",
+                FirstName = $"{Guid.NewGuid():N}",
+                MiddleName = $"{Guid.NewGuid():N}",
                 Post = Context.Contracts.Enums.Post.None
             };
             result.BaseAuditSetParamtrs();
@@ -67,8 +68,8 @@ namespace BookingRoom.Services.Tests
         {
             var result = new Service
             {
-                Title = $"услуга",
-                Description = $"хорошая"
+                Title = $"{Guid.NewGuid():N}",
+                Description = $"{Guid.NewGuid():N}"
             };
             result.BaseAuditSetParamtrs();
 
@@ -95,8 +96,8 @@ namespace BookingRoom.Services.Tests
             var result = new HotelModel
             {
                 Id = Guid.NewGuid(),
-                Title = $"Аврора",
-                Address = $"Примосркое 261"
+                Title = $"{Guid.NewGuid():N}",
+                Address = $"{Guid.NewGuid():N}"
             };
             settings?.Invoke(result);
             return result;
@@ -111,8 +112,8 @@ namespace BookingRoom.Services.Tests
                 LastName = $"{Guid.NewGuid():N}",
                 FirstName = $"{Guid.NewGuid():N}",
                 MiddleName = $"{Guid.NewGuid():N}",
-                Passport = $"55555",
-                AddressRegistration = $"{Guid.NewGuid():N}",
+                Passport = $"{string.Join("", Guid.NewGuid().ToString().Take(19))}",
+                AddressRegistration = $"{Guid.NewGuid():N}"
             };
 
             settings?.Invoke(result);
@@ -124,7 +125,7 @@ namespace BookingRoom.Services.Tests
             var result = new RoomModel
             {
                 Id = Guid.NewGuid(),
-                Title = $"55555",
+                Title = $"{Guid.NewGuid():N}",
                 TypeRoom = $"{Guid.NewGuid():N}",
                 Description = $"{Guid.NewGuid():N}"
             };
@@ -141,7 +142,7 @@ namespace BookingRoom.Services.Tests
                 LastName = $"{Guid.NewGuid():N}",
                 FirstName = $"{Guid.NewGuid():N}",
                 MiddleName = $"{Guid.NewGuid():N}",
-                Post = Contracts.Enums.PostModel.None
+                Post = PostModel.None
             };
 
             settings?.Invoke(result);

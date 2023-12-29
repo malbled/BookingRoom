@@ -1,8 +1,8 @@
 ﻿using BookingRoom.Context.Contracts.Models;
 
-namespace BookingRoom.Repositories.Tests
+namespace BookingRoom.Test.Extensions
 {
-    internal static class TestDataExtensions
+    public static class TestDataExtensions
     {
         public static void BaseAuditSetParamtrs<TEntity>(this TEntity entity) where TEntity : BaseAuditEntity
         {

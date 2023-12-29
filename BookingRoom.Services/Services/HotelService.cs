@@ -20,8 +20,12 @@ namespace BookingRoom.Services.Services
         private readonly IMapper mapper;
         private readonly IServiceValidatorService validatorService;
 
-        public HotelService(IHotelRedRepository hotelRedRepositiry, IMapper mapper,
-            IHotelWriteRepository hotelWriteRepository, IUnitOfWork unitOfWork, IServiceValidatorService validatorService)
+        public HotelService(
+            IHotelRedRepository hotelRedRepositiry, 
+            IMapper mapper,
+            IHotelWriteRepository hotelWriteRepository, 
+            IUnitOfWork unitOfWork, 
+            IServiceValidatorService validatorService)
         {
             this.hotelRedRepositiry = hotelRedRepositiry;
             this.mapper = mapper;

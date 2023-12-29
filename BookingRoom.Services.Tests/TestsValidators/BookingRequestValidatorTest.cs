@@ -2,6 +2,7 @@
 using BookingRoom.Context.Tests;
 using BookingRoom.Repositories.ReadRepositories;
 using BookingRoom.Services.Validator.Validators;
+using BookingRoom.Test.Extensions;
 using FluentValidation.TestHelper;
 using System;
 using System.Collections.Generic;
@@ -66,12 +67,9 @@ namespace BookingRoom.Services.Tests.TestsValidators
             model.HotelId = hotel.Id;
             model.GuestId = guest.Id;
             model.RoomId = room.Id;
-            model.ServiceId = service.Id; 
-            model.DateCheckIn = DateTime.Now;
-            model.DateCheckout = DateTime.Now;
-            model.Price = 101;
-
-
+            model.StaffId = Guid.Empty;
+            model.ServiceId = service.Id;
+            
             // Act
             var result = await validator.TestValidateAsync(model);
 

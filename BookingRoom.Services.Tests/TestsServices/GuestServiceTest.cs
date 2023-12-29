@@ -8,6 +8,7 @@ using BookingRoom.Services.Contracts.Exceptions;
 using BookingRoom.Services.Contracts.ServicesContracts;
 using BookingRoom.Services.Services;
 using BookingRoom.Services.Validator;
+using BookingRoom.Test.Extensions;
 using FluentAssertions;
 using Xunit;
 
@@ -80,8 +81,9 @@ namespace BookingRoom.Services.Tests.TestsServices
                 .And.BeEquivalentTo(new
                 {
                     target.Id,
-                    target.FirstName,
                     target.LastName,
+                    target.FirstName,
+                    
                     target.MiddleName,
                     target.Passport,
                     target.AddressRegistration
@@ -274,8 +276,9 @@ namespace BookingRoom.Services.Tests.TestsServices
                 .BeEquivalentTo(new
                 {
                     model.Id,
-                    model.FirstName,
                     model.LastName,
+                    model.FirstName,
+                    
                     model.MiddleName,
                     model.Passport,
                     model.AddressRegistration

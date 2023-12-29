@@ -1,4 +1,5 @@
 ﻿using BookingRoom.Services.Validator.Validators;
+using BookingRoom.Test.Extensions;
 using FluentValidation.TestHelper;
 using Xunit;
 

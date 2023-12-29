@@ -26,15 +26,16 @@ namespace BookingRoom.Services.AutoMappers
                 .ForMember(x => x.Hotel, opt => opt.Ignore())
                 .ForMember(x => x.Guest, opt => opt.Ignore())
                 .ForMember(x => x.Room, opt => opt.Ignore())
-                .ForMember(x => x.Service, opt => opt.Ignore())
-                .ForMember(x => x.Staff, opt => opt.Ignore()).ReverseMap();
+                .ForMember(x => x.Staff, opt => opt.Ignore())
+                .ForMember(x => x.Service, opt => opt.Ignore()).ReverseMap();
 
             CreateMap<BookingRequestModel, Booking>(MemberList.Destination)
-                .ForMember(x => x.Room, opt => opt.Ignore())
                 .ForMember(x => x.Hotel, opt => opt.Ignore())
                 .ForMember(x => x.Guest, opt => opt.Ignore())
-                .ForMember(x => x.Service, opt => opt.Ignore())
+                .ForMember(x => x.Room, opt => opt.Ignore())
                 .ForMember(x => x.Staff, opt => opt.Ignore())
+                .ForMember(x => x.Service, opt => opt.Ignore())
+
                 .ForMember(x => x.CreatedAt, opt => opt.Ignore())
                 .ForMember(x => x.DeletedAt, opt => opt.Ignore())
                 .ForMember(x => x.CreatedBy, opt => opt.Ignore())

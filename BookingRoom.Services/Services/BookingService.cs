@@ -108,11 +108,12 @@ namespace BookingRoom.Services.Services
             var rooms = await roomRedRepository
                 .GetByIdsAsync(bookings.Select(x => x.RoomId).Distinct(), cancellationToken);
 
+            var staffs = await staffReadRepository
+                .GetByIdsAsync(bookings.Where(x => x.StaffId.HasValue).Select(x => x.StaffId!.Value).Distinct(), cancellationToken);
+
             var services = await serviceRedRepository
                 .GetByIdsAsync(bookings.Select(x => x.ServiceId).Distinct(), cancellationToken);
 
-            var staffs = await staffReadRepository
-                .GetByIdsAsync(bookings.Where(x => x.StaffId.HasValue).Select(x => x.StaffId!.Value).Distinct(), cancellationToken);
 
             var result = new List<BookingModel>();
 
@@ -136,9 +137,8 @@ namespace BookingRoom.Services.Services
                                               staffs.TryGetValue(booking.StaffId!.Value, out var staff)
                         ? mapper.Map<StaffModel>(staff)
                         : null;
+
                     bookingModel.Service = mapper.Map<ServiceModel>(service);
-                    
-                   
 
                     result.Add(bookingModel);
                 }

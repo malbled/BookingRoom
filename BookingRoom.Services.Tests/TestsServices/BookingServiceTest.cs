@@ -8,7 +8,9 @@ using BookingRoom.Services.Contracts.Exceptions;
 using BookingRoom.Services.Contracts.ServicesContracts;
 using BookingRoom.Services.Services;
 using BookingRoom.Services.Validator;
+using BookingRoom.Test.Extensions;
 using FluentAssertions;
+using System.Net.Sockets;
 using Xunit;
 
 namespace BookingRoom.Services.Tests.TestsServices
@@ -292,7 +294,6 @@ namespace BookingRoom.Services.Tests.TestsServices
             await Context.Guests.AddAsync(guest);
             await Context.Rooms.AddAsync(room);
             await Context.Services.AddAsync(service);
-                     
             await UnitOfWork.SaveChangesAsync(CancellationToken);
 
             var booking = TestDataGenerator.Booking();
@@ -302,6 +303,8 @@ namespace BookingRoom.Services.Tests.TestsServices
             booking.ServiceId = service.Id;
 
             var model = TestDataGenerator.BookingRequestModel();
+                model.Id = booking.Id;
+
             model.HotelId = hotel.Id;
             model.GuestId = guest.Id;
             model.RoomId = room.Id;
@@ -322,8 +325,9 @@ namespace BookingRoom.Services.Tests.TestsServices
                 {
                     model.Id,
                     model.DateCheckIn,
-                    model.Price,
-                    model.DateCheckout
+                    model.DateCheckout,
+                    model.Price
+                    
                 });
         }
     }

@@ -8,13 +8,8 @@ using BookingRoom.Services.Contracts.Exceptions;
 using BookingRoom.Services.Contracts.ServicesContracts;
 using BookingRoom.Services.Services;
 using BookingRoom.Services.Validator;
+using BookingRoom.Test.Extensions;
 using FluentAssertions;
-using System.Collections.Generic;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace BookingRoom.Services.Tests.TestsServices

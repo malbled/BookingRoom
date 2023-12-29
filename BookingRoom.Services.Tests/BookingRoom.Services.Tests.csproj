@@ -20,6 +20,7 @@
     <ProjectReference Include="..\BookingRoom.Context.Tests\BookingRoom.Context.Tests.csproj" />
     <ProjectReference Include="..\BookingRoom.Repositories\BookingRoom.Repositories.csproj" />
     <ProjectReference Include="..\BookingRoom.Services\BookingRoom.Services.csproj" />
+    <ProjectReference Include="..\BookingRoom.Test.Extensions\BookingRoom.Test.Extensions.csproj" />
   </ItemGroup>
 
 </Project>

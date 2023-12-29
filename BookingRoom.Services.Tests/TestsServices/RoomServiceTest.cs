@@ -8,6 +8,7 @@ using BookingRoom.Services.Contracts.Exceptions;
 using BookingRoom.Services.Contracts.ServicesContracts;
 using BookingRoom.Services.Services;
 using BookingRoom.Services.Validator;
+using BookingRoom.Test.Extensions;
 using FluentAssertions;
 using Xunit;
 
@@ -27,11 +28,15 @@ namespace BookingRoom.Services.Tests.TestsServices
             {
                 cfg.AddProfile(new ServiceMapper());
             });
+
+            roomReadRepository = new RoomReadRepository(Reader);
+
             roomService = new RoomService(
-                new RoomWriteRepository(WriterContext), 
                 roomReadRepository,
-                UnitOfWork, 
                 config.CreateMapper(),
+                new RoomWriteRepository(WriterContext), 
+                UnitOfWork, 
+                
                 
                 new ServicesValidatorService(
                     new HotelReadRepository(Reader),
@@ -78,8 +83,9 @@ namespace BookingRoom.Services.Tests.TestsServices
                 {
                     target.Id,
                     target.Title,
-                    target.Description,
-                    target.TypeRoom
+                    target.TypeRoom,
+                    target.Description
+                    
                 });
         }
 
@@ -153,7 +159,7 @@ namespace BookingRoom.Services.Tests.TestsServices
             Func<Task> result = () => roomService.DeleteAsync(model.Id, CancellationToken);
 
             // Assert
-            await result.Should().ThrowAsync<BookingInvalidOperationException>()
+            await result.Should().ThrowAsync<BookingEntityNotFoundException<Room>>()
                 .WithMessage($"*{model.Id}*");
         }
 

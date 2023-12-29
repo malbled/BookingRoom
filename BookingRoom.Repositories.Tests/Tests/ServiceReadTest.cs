@@ -1,6 +1,7 @@
 ﻿using BookingRoom.Context.Tests;
 using BookingRoom.Repositories.Contracts.ReadRepositoriesContracts;
 using BookingRoom.Repositories.ReadRepositories;
+using BookingRoom.Test.Extensions;
 using FluentAssertions;
 using Xunit;
 
