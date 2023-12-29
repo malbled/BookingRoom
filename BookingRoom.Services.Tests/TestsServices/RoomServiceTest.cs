@@ -85,7 +85,6 @@ namespace BookingRoom.Services.Tests.TestsServices
                     target.Title,
                     target.TypeRoom,
                     target.Description
-                    
                 });
         }
 
@@ -131,7 +130,7 @@ namespace BookingRoom.Services.Tests.TestsServices
         /// Удаление несуществуюущего <see cref="Room"/>
         /// </summary>
         [Fact]
-        public async Task DeletingNonExistentCinemaReturnExсeption()
+        public async Task DeletingNonExistentRoomReturnExсeption()
         {
             //Arrange
             var id = Guid.NewGuid();
@@ -148,7 +147,7 @@ namespace BookingRoom.Services.Tests.TestsServices
         /// Удаление удаленного <see cref="Room"/>
         /// </summary>
         [Fact]
-        public async Task DeletingDeletedCinemaReturnExсeption()
+        public async Task DeletingDeletedRoomReturnExсeption()
         {
             //Arrange
             var model = TestDataGenerator.Room(x => x.DeletedAt = DateTime.UtcNow);
@@ -278,7 +277,6 @@ namespace BookingRoom.Services.Tests.TestsServices
                     model.Title,
                     model.TypeRoom,
                     model.Description
-                    
                 });
         }
     }

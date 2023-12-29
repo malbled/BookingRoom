@@ -1,7 +1,7 @@
 ﻿using BookingRoom.API.Exceptions;
+using BookingRoom.Services.Contracts.Exceptions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using BookingRoom.Services.Contracts.Exceptions;
 
 namespace BookingRoom.API.Extensions
 {

@@ -1,7 +1,6 @@
 ﻿using BookingRoom.Common.Entity.EntityInterface;
 using BookingRoom.Common.Entity.InterfaceDB;
 using BookingRoom.Repositories.Contracts.WriteRepositoriesContracts;
-//using BookingRoom.Repositories.Contracts.WriteRepositoriesContracts;
 using System.Diagnostics.CodeAnalysis;
 
 namespace BookingRoom.Repositories

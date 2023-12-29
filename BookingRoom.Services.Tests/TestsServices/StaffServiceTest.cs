@@ -10,11 +10,6 @@ using BookingRoom.Services.Services;
 using BookingRoom.Services.Validator;
 using BookingRoom.Test.Extensions;
 using FluentAssertions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace BookingRoom.Services.Tests.TestsServices
@@ -123,7 +118,7 @@ namespace BookingRoom.Services.Tests.TestsServices
         /// Удаление несуществуюущего <see cref="Staff"/>
         /// </summary>
         [Fact]
-        public async Task DeletingNonExistentCinemaReturnExсeption()
+        public async Task DeletingNonExistentStaffReturnExсeption()
         {
             //Arrange
             var id = Guid.NewGuid();
@@ -140,7 +135,7 @@ namespace BookingRoom.Services.Tests.TestsServices
         /// Удаление удаленного <see cref="Staff"/>
         /// </summary>
         [Fact]
-        public async Task DeletingDeletedCinemaReturnExсeption()
+        public async Task DeletingDeletedStaffReturnExсeption()
         {
             //Arrange
             var model = TestDataGenerator.Staff(x => x.DeletedAt = DateTime.UtcNow);

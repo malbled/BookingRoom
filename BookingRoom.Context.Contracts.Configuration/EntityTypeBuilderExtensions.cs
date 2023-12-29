@@ -1,6 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using BookingRoom.Common.Entity.EntityInterface;
 using BookingRoom.Context.Contracts.Models;
-using BookingRoom.Common.Entity.EntityInterface;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace BookingRoom.Context.Contracts.Configuration
 {

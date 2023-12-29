@@ -1,7 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-using BookingRoom.Common.Entity.InterfaceDB;
+﻿using BookingRoom.Common.Entity.InterfaceDB;
 using BookingRoom.Context.Contracts;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace BookingRoom.Context
 {

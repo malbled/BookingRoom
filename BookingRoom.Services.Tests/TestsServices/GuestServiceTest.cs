@@ -83,7 +83,6 @@ namespace BookingRoom.Services.Tests.TestsServices
                     target.Id,
                     target.LastName,
                     target.FirstName,
-                    
                     target.MiddleName,
                     target.Passport,
                     target.AddressRegistration
@@ -132,7 +131,7 @@ namespace BookingRoom.Services.Tests.TestsServices
         /// Удаление несуществуюущего <see cref="Guest"/>
         /// </summary>
         [Fact]
-        public async Task DeletingNonExistentCinemaReturnExсeption()
+        public async Task DeletingNonExistentGuestReturnExсeption()
         {
             //Arrange
             var id = Guid.NewGuid();
@@ -149,7 +148,7 @@ namespace BookingRoom.Services.Tests.TestsServices
         /// Удаление удаленного <see cref="Guest"/>
         /// </summary>
         [Fact]
-        public async Task DeletingDeletedCinemaReturnExсeption()
+        public async Task DeletingDeletedGuestReturnExсeption()
         {
             //Arrange
             var model = TestDataGenerator.Guest(x => x.DeletedAt = DateTime.UtcNow);
@@ -278,7 +277,6 @@ namespace BookingRoom.Services.Tests.TestsServices
                     model.Id,
                     model.LastName,
                     model.FirstName,
-                    
                     model.MiddleName,
                     model.Passport,
                     model.AddressRegistration
