@@ -16,21 +16,21 @@ namespace BookingRoom.Context
     /// 4) dotnet ef database update --project BookingRoom.Context\BookingRoom.Context.csproj
     /// 5) dotnet ef database update [targetMigrationName] --BookingRoom.Context\BookingRoom.Context.csproj
     /// 
-    ///  dotnet tool update --global dotnet-ef --version 6.0.25
+    ///  dotnet tool update --global dotnet-ef --version 6.0.0
     /// </remarks>
     public class BookingRoomContext : DbContext, IBookingRoomContext, IDbRead, IDbWriter, IUnitOfWork
     {
-        public DbSet<Hotel> Hotels { get; }
+        public DbSet<Hotel> Hotels { get; set; }
 
-        public DbSet<Guest> Guests { get; }
+        public DbSet<Guest> Guests { get; set;  }
 
-        public DbSet<Service> Services { get; }
+        public DbSet<Room> Rooms { get; set;  }
 
-        public DbSet<Room> Rooms { get; }
+        public DbSet<Staff> Staffs { get; set;  }
 
-        public DbSet<Staff> Staffs { get; }
+        public DbSet<Service> Services { get; set; }
 
-        public DbSet<Booking> Bookings { get; }
+        public DbSet<Booking> Bookings { get; set; }
 
         public BookingRoomContext(DbContextOptions<BookingRoomContext> options) : base(options)
         {

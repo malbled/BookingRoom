@@ -7,10 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="6.0.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
+    <PackageReference Include="xunit" Version="2.6.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BookingRoom.Context.Contracts\BookingRoom.Context.Contracts.csproj" />
     <ProjectReference Include="..\BookingRoom.Context.Tests\BookingRoom.Context.Tests.csproj" />
     <ProjectReference Include="..\BookingRoom.Repositories.Contracts\BookingRoom.Repositories.Contracts.csproj" />
     <ProjectReference Include="..\BookingRoom.Repositories\BookingRoom.Repositories.csproj" />
+    <ProjectReference Include="..\BookingRoom.Test.Extensions\BookingRoom.Test.Extensions.csproj" />
   </ItemGroup>
 
 </Project>

@@ -6,19 +6,9 @@
     public class CreateBookingRequest
     {
         /// <summary>
-        /// Идентификатор номера
-        /// </summary>
-        public Guid RoomId { get; set; }
-
-        /// <summary>
         /// Идентификатор отеля
         /// </summary>
         public Guid HotelId { get; set; }
-
-        /// <summary>
-        /// Идентификатор услуги
-        /// </summary>
-        public Guid ServiceId { get; set; }
 
         /// <summary>
         /// Идентификатор постояльца
@@ -26,14 +16,19 @@
         public Guid GuestId { get; set; }
 
         /// <summary>
+        /// Идентификатор номера
+        /// </summary>
+        public Guid RoomId { get; set; }
+
+        /// <summary>
         /// Идентификатор сотрудника, оформившего бронь
         /// </summary>
         public Guid? StaffId { get; set; }
 
         /// <summary>
-        /// Итоговая цена
+        /// Идентификатор услуги
         /// </summary>
-        public decimal Price { get; set; }
+        public Guid ServiceId { get; set; }
 
         /// <summary>
         /// Дата заезда
@@ -44,5 +39,10 @@
         /// Дата выезда
         /// </summary>
         public DateTimeOffset DateCheckout { get; set; }
+
+        /// <summary>
+        /// Итоговая цена
+        /// </summary>
+        public decimal Price { get; set; }
     }
 }

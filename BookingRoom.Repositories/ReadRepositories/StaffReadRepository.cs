@@ -24,8 +24,8 @@ namespace BookingRoom.Repositories.ReadRepositories
         Task<IReadOnlyCollection<Staff>> IStaffRedRepository.GetAllAsync(CancellationToken cancellationToken)
             => reader.Read<Staff>()
                 .NotDeletedAt()
-                .OrderBy(x => x.FirstName)
-                .ThenBy(x => x.LastName)
+                .OrderBy(x => x.LastName)
+                .ThenBy(x => x.FirstName)
                 .ThenBy(x => x.MiddleName)
                 .ToReadOnlyCollectionAsync(cancellationToken);
 
@@ -38,8 +38,8 @@ namespace BookingRoom.Repositories.ReadRepositories
             => reader.Read<Staff>()
                 .NotDeletedAt()
                 .ByIds(ids)
-                .OrderBy(x => x.FirstName)
-                .ThenBy(x => x.LastName)
+                .OrderBy(x => x.LastName)
+                .ThenBy(x => x.FirstName)
                 .ThenBy(x => x.MiddleName)
                 .ToDictionaryAsync(x => x.Id, cancellationToken);
 

@@ -20,8 +20,12 @@ namespace BookingRoom.Services.Services
         private readonly IMapper mapper;
         private readonly IServiceValidatorService validatorService;
 
-        public RoomService(IRoomWriteRepository roomWriteRepository, IRoomRedRepository roomRedRepository,
-            IUnitOfWork unitOfWork, IMapper mapper, IServiceValidatorService validatorService)
+        public RoomService(
+            IRoomRedRepository roomRedRepository,
+            IMapper mapper,
+            IRoomWriteRepository roomWriteRepository,           
+            IUnitOfWork unitOfWork, 
+            IServiceValidatorService validatorService)
         {
             this.roomWriteRepository = roomWriteRepository;
             this.roomRedRepository = roomRedRepository;
@@ -50,11 +54,6 @@ namespace BookingRoom.Services.Services
             if (targetRoom == null)
             {
                 throw new BookingEntityNotFoundException<Room>(id);
-            }
-
-            if (targetRoom.DeletedAt.HasValue)
-            {
-                throw new BookingInvalidOperationException($"Номер с идентификатором {id} уже удален");
             }
 
             roomWriteRepository.Delete(targetRoom);

@@ -53,7 +53,7 @@ namespace BookingRoom.Services.Validator.Validators
                 .NotEmpty().WithMessage(MessageForValidation.DefaultMessage);
 
             RuleFor(x => x.Price)
-                .InclusiveBetween(100, 5000).WithMessage(MessageForValidation.InclusiveBetweenMessage);
+                .InclusiveBetween(100, 10000000).WithMessage(MessageForValidation.InclusiveBetweenMessage);
         }
     }
 }

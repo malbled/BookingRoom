@@ -28,7 +28,7 @@
         /// <summary>
         /// Адрес регистрации
         /// </summary>
-        public string AddressRegistation { get; set; } = string.Empty;
+        public string AddressRegistration { get; set; } = string.Empty;
 
     }
 }

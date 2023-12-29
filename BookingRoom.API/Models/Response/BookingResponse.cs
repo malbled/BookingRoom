@@ -21,11 +21,6 @@
         public GuestResponse? Guest { get; set; }
 
         /// <summary>
-        /// Сущность услуги
-        /// </summary>
-        public ServiceResponse? Service { get; set; }
-
-        /// <summary>
         /// Сущность номера
         /// </summary>
         public RoomResponse? Room { get; set; }
@@ -36,9 +31,9 @@
         public StaffResponse? Staff { get; set; }
 
         /// <summary>
-        /// Итоговая цена
+        /// Сущность услуги
         /// </summary>
-        public decimal Price { get; set; }
+        public ServiceResponse? Service { get; set; }
 
         /// <summary>
         /// Дата заезда
@@ -49,5 +44,12 @@
         /// Дата выезда
         /// </summary>
         public string DateCheckout { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Итоговая цена
+        /// </summary>
+        public decimal Price { get; set; }
+
+        
     }
 }

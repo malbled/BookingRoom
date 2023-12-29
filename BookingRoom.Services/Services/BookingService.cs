@@ -26,9 +26,14 @@ namespace BookingRoom.Services.Services
         private readonly IMapper mapper;
         private readonly IServiceValidatorService validatorService;
 
-        public BookingService(IBookingWriteRepository bookingWriteRepository, IBookingRedRepository bookingRedRepository, IHotelRedRepository hotelRedRepository,
-            IGuestRedRepository guestRedRepository, IServiceRedRepository serviceRedRepository,
-            IRoomRedRepository roomRedRepository, IStaffRedRepository staffReadRepository,
+        public BookingService(IBookingWriteRepository bookingWriteRepository, 
+            IBookingRedRepository bookingRedRepository, 
+            IHotelRedRepository hotelRedRepository,
+            IGuestRedRepository guestRedRepository,
+            IRoomRedRepository roomRedRepository,
+            IServiceRedRepository serviceRedRepository,
+            
+            IStaffRedRepository staffReadRepository,
             IMapper mapper, IUnitOfWork unitOfWork, IServiceValidatorService validatorService)
         {
             this.bookingWriteRepository = bookingWriteRepository;
@@ -100,14 +105,15 @@ namespace BookingRoom.Services.Services
             var guests = await guestRedRepository
                 .GetByIdsAsync(bookings.Select(x => x.GuestId).Distinct(), cancellationToken);
 
-            var services = await serviceRedRepository
-                .GetByIdsAsync(bookings.Select(x => x.ServiceId).Distinct(), cancellationToken);
-
             var rooms = await roomRedRepository
                 .GetByIdsAsync(bookings.Select(x => x.RoomId).Distinct(), cancellationToken);
 
             var staffs = await staffReadRepository
                 .GetByIdsAsync(bookings.Where(x => x.StaffId.HasValue).Select(x => x.StaffId!.Value).Distinct(), cancellationToken);
+
+            var services = await serviceRedRepository
+                .GetByIdsAsync(bookings.Select(x => x.ServiceId).Distinct(), cancellationToken);
+
 
             var result = new List<BookingModel>();
 
@@ -124,14 +130,15 @@ namespace BookingRoom.Services.Services
                 {
                     var bookingModel = mapper.Map<BookingModel>(booking);
 
+                    bookingModel.Hotel = mapper.Map<HotelModel>(hotel);
+                    bookingModel.Guest = mapper.Map<GuestModel>(guest);
                     bookingModel.Room = mapper.Map<RoomModel>(room);
-                    bookingModel.Service = mapper.Map<ServiceModel>(service);
                     bookingModel.Staff = booking.StaffId.HasValue &&
                                               staffs.TryGetValue(booking.StaffId!.Value, out var staff)
                         ? mapper.Map<StaffModel>(staff)
                         : null;
-                    bookingModel.Hotel = mapper.Map<HotelModel>(hotel);
-                    bookingModel.Guest = mapper.Map<GuestModel>(guest);
+
+                    bookingModel.Service = mapper.Map<ServiceModel>(service);
 
                     result.Add(bookingModel);
                 }
@@ -156,13 +163,12 @@ namespace BookingRoom.Services.Services
         {
             var bookingModel = mapper.Map<BookingModel>(booking);
             bookingModel.Hotel = mapper.Map<HotelModel>(await roomRedRepository.GetByIdAsync(booking.HotelId, cancellationToken));
+            bookingModel.Guest = mapper.Map<GuestModel>(await guestRedRepository.GetByIdAsync(booking.GuestId, cancellationToken));
             bookingModel.Room = mapper.Map<RoomModel>(await roomRedRepository.GetByIdAsync(booking.RoomId, cancellationToken));
-            bookingModel.Service = mapper.Map<ServiceModel>(await serviceRedRepository.GetByIdAsync(booking.ServiceId, cancellationToken));
             bookingModel.Staff = mapper.Map<StaffModel>(booking.StaffId.HasValue
                 ? await staffReadRepository.GetByIdAsync(booking.StaffId.Value, cancellationToken)
                 : null);
-            bookingModel.Guest = mapper.Map<GuestModel>(await guestRedRepository.GetByIdAsync(booking.GuestId, cancellationToken));
-
+            bookingModel.Service = mapper.Map<ServiceModel>(await serviceRedRepository.GetByIdAsync(booking.ServiceId, cancellationToken));
             return bookingModel;
         }
     }

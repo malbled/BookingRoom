@@ -8,6 +8,7 @@
         public BookingEntityNotFoundException(Guid id)
             : base($"Сущность {typeof(TEntity)} c id = {id} не найдена.")
         {
+
         }
     }
 }
