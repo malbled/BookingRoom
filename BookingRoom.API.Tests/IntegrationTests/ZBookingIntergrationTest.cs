@@ -32,7 +32,7 @@ namespace BookingRoom.API.Tests.IntegrationTests
             context.Guests.Add(guest);
             context.Rooms.Add(room);
             context.Services.Add(service);
-            unitOfWork.SaveChangesAsync();
+            unitOfWork.SaveChangesAsync().Wait();
         }
 
         [Fact]
