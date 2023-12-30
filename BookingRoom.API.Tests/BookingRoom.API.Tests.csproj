@@ -25,4 +25,10 @@
     <ProjectReference Include="..\BookingRoom.Test.Extensions\BookingRoom.Test.Extensions.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="appsettings.integration.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
