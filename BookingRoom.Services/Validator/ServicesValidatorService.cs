@@ -1,10 +1,10 @@
 ﻿using BookingRoom.General;
 using BookingRoom.Repositories.Contracts.ReadRepositoriesContracts;
-using BookingRoom.Services.Validator.Validators;
-using FluentValidation;
 using BookingRoom.Services.Contracts.Exceptions;
 using BookingRoom.Services.Contracts.Models;
 using BookingRoom.Services.Contracts.ModelsRequest;
+using BookingRoom.Services.Validator.Validators;
+using FluentValidation;
 
 
 namespace BookingRoom.Services.Validator

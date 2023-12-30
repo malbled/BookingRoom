@@ -81,8 +81,8 @@ namespace BookingRoom.Test.Extensions
         {
             var result = new Booking
             {
-                DateCheckIn = DateTimeOffset.Now,
-                DateCheckout = DateTimeOffset.Now,
+                DateCheckIn = DateTimeOffset.UtcNow,
+                DateCheckout = DateTimeOffset.UtcNow,
                 Price = 101
             };
             result.BaseAuditSetParamtrs();
@@ -168,8 +168,8 @@ namespace BookingRoom.Test.Extensions
             var result = new BookingRequestModel
             {
                 Id = Guid.NewGuid(),
-                DateCheckIn = DateTimeOffset.Now.AddDays(1),
-                DateCheckout = DateTimeOffset.Now.AddDays(3),
+                DateCheckIn = DateTimeOffset.UtcNow,
+                DateCheckout = DateTimeOffset.UtcNow,
                 Price = 101
             };
 

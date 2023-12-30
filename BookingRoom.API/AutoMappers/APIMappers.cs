@@ -40,7 +40,6 @@ namespace BookingRoom.API.AutoMappers
             CreateMap<GuestRequest, GuestModel>(MemberList.Destination).ReverseMap();
             CreateMap<StaffRequest, StaffModel>(MemberList.Destination).ReverseMap();
             CreateMap<BookingRequest, BookingModel>(MemberList.Destination)
-
                 .ForMember(x => x.Hotel, opt => opt.Ignore())
                 .ForMember(x => x.Guest, opt => opt.Ignore())
                 .ForMember(x => x.Room, opt => opt.Ignore())

@@ -118,7 +118,7 @@ namespace BookingRoom.Services.Tests.TestsServices
         /// Удаление несуществуюущего <see cref="Service"/>
         /// </summary>
         [Fact]
-        public async Task DeletingNonExistentCinemaReturnExсeption()
+        public async Task DeletingNonExistentServiceReturnExсeption()
         {
             //Arrange
             var id = Guid.NewGuid();
@@ -135,7 +135,7 @@ namespace BookingRoom.Services.Tests.TestsServices
         /// Удаление удаленного <see cref="Film"/>
         /// </summary>
         [Fact]
-        public async Task DeletingDeletedCinemaReturnExсeption()
+        public async Task DeletingDeletedServiceReturnExсeption()
         {
             //Arrange
             var model = TestDataGenerator.Service(x => x.DeletedAt = DateTime.UtcNow);

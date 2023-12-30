@@ -2,9 +2,9 @@
 using AutoMapper.Extensions.EnumMapping;
 using BookingRoom.Context.Contracts.Enums;
 using BookingRoom.Context.Contracts.Models;
+using BookingRoom.Services.Contracts.Enums;
 using BookingRoom.Services.Contracts.Models;
 using BookingRoom.Services.Contracts.ModelsRequest;
-using BookingRoom.Services.Contracts.Enums;
 
 namespace BookingRoom.Services.AutoMappers
 {

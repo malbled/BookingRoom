@@ -10,7 +10,6 @@ using BookingRoom.Services.Services;
 using BookingRoom.Services.Validator;
 using BookingRoom.Test.Extensions;
 using FluentAssertions;
-using System.Net.Sockets;
 using Xunit;
 
 namespace BookingRoom.Services.Tests.TestsServices
@@ -30,9 +29,9 @@ namespace BookingRoom.Services.Tests.TestsServices
             });
 
             bookingService = new BookingService(new BookingWriteRepository(WriterContext), new BookingReadRepository(Reader),
-                new HotelReadRepository(Reader), new GuestReadRepository(Reader), new RoomReadRepository(Reader),
-                new ServiceReadRepository(Reader),
-                 new StaffReadRepository(Reader), config.CreateMapper(), UnitOfWork,
+                new HotelReadRepository(Reader), new GuestReadRepository(Reader), 
+                new RoomReadRepository(Reader), new ServiceReadRepository(Reader),
+                new StaffReadRepository(Reader), config.CreateMapper(), UnitOfWork,
                 new ServicesValidatorService(new HotelReadRepository(Reader),
                 new GuestReadRepository(Reader), new ServiceReadRepository(Reader), new RoomReadRepository(Reader)));
         }
@@ -120,7 +119,7 @@ namespace BookingRoom.Services.Tests.TestsServices
         /// Удаление не существуюущего <see cref="Booking"/>
         /// </summary>
         [Fact]
-        public async Task DeletingNonExistentCinemaReturnExсeption()
+        public async Task DeletingNonExistentBookingReturnExсeption()
         {
             //Arrange
             var id = Guid.NewGuid();
@@ -137,7 +136,7 @@ namespace BookingRoom.Services.Tests.TestsServices
         /// Удаление удаленного <see cref="Booking"/>
         /// </summary>
         [Fact]
-        public async Task DeletingDeletedCinemaReturnExсeption()
+        public async Task DeletingDeletedBookingReturnExсeption()
         {
             //Arrange
             var model = TestDataGenerator.Booking(x => x.DeletedAt = DateTime.UtcNow);
@@ -189,8 +188,7 @@ namespace BookingRoom.Services.Tests.TestsServices
             await Context.Guests.AddAsync(guest);
             await Context.Rooms.AddAsync(room);
             await Context.Services.AddAsync(service);
-            
-            
+
             await UnitOfWork.SaveChangesAsync(CancellationToken);
 
             var model = TestDataGenerator.BookingRequestModel();
@@ -198,7 +196,6 @@ namespace BookingRoom.Services.Tests.TestsServices
             model.GuestId = guest.Id;
             model.RoomId = room.Id;
             model.ServiceId = service.Id;
-            
 
             //Act
             Func<Task> act = () => bookingService.AddAsync(model, CancellationToken);
@@ -242,8 +239,7 @@ namespace BookingRoom.Services.Tests.TestsServices
             await Context.Guests.AddAsync(guest);
             await Context.Rooms.AddAsync(room);
             await Context.Services.AddAsync(service);
-            
-            
+
             await UnitOfWork.SaveChangesAsync(CancellationToken);
 
             var model = TestDataGenerator.BookingRequestModel();
@@ -251,8 +247,6 @@ namespace BookingRoom.Services.Tests.TestsServices
             model.GuestId = guest.Id;
             model.RoomId = room.Id;
             model.ServiceId = service.Id;
-           
-           
 
             //Act
             Func<Task> act = () => bookingService.EditAsync(model, CancellationToken);
