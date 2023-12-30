@@ -29,7 +29,7 @@ namespace BookingRoom.API.Extensions
         }
 
         /// <summary>
-        /// Включает фильтры и ставит шрифт на перечесления
+        /// Включает фильтры и ставит шрифт на перечисления
         /// </summary>
         /// <param name="services"></param>
         public static void RegistrationControllers(this IServiceCollection services)
@@ -44,7 +44,7 @@ namespace BookingRoom.API.Extensions
                     {
                         CamelCaseText = false
                     });
-                });
+                }).AddControllersAsServices();
         }
 
         /// <summary>

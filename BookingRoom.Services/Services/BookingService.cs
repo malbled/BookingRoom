@@ -162,7 +162,7 @@ namespace BookingRoom.Services.Services
         async private Task<BookingModel> GetBookingModelOnMapping(Booking booking, CancellationToken cancellationToken)
         {
             var bookingModel = mapper.Map<BookingModel>(booking);
-            bookingModel.Hotel = mapper.Map<HotelModel>(await roomRedRepository.GetByIdAsync(booking.HotelId, cancellationToken));
+            bookingModel.Hotel = mapper.Map<HotelModel>(await hotelRedRepository.GetByIdAsync(booking.HotelId, cancellationToken));
             bookingModel.Guest = mapper.Map<GuestModel>(await guestRedRepository.GetByIdAsync(booking.GuestId, cancellationToken));
             bookingModel.Room = mapper.Map<RoomModel>(await roomRedRepository.GetByIdAsync(booking.RoomId, cancellationToken));
             bookingModel.Staff = mapper.Map<StaffModel>(booking.StaffId.HasValue

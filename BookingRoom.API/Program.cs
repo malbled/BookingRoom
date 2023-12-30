@@ -9,6 +9,7 @@ builder.Services.RegistrationControllers();
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
 builder.Services.RegistrationSwagger();
 builder.Services.AddDbContextFactory<BookingRoomContext>(options
     => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")), ServiceLifetime.Scoped);
@@ -29,3 +30,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+
+public partial class Program { }

@@ -38,12 +38,12 @@
         /// <summary>
         /// Дата заезда
         /// </summary>
-        public string DateCheckIn { get; set; } = string.Empty;
+        public DateTimeOffset DateCheckIn { get; set; } = DateTimeOffset.UtcNow;
 
         /// <summary>
         /// Дата выезда
         /// </summary>
-        public string DateCheckout { get; set; } = string.Empty;
+        public DateTimeOffset DateCheckout { get; set; } = DateTimeOffset.UtcNow;
 
         /// <summary>
         /// Итоговая цена

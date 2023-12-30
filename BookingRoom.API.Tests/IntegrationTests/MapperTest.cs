@@ -4,7 +4,7 @@ using FluentAssertions;
 using FluentAssertions.Extensions;
 using Xunit;
 
-namespace BookingRoom.API.Tests
+namespace BookingRoom.API.Tests.IntegrationTests
 {
     public class MapperTest
     {
